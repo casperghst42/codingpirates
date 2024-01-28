@@ -1,6 +1,7 @@
 """
 Mit allerførste Pygame Zero spil
 """
+
 alien = Actor("alien")
 alien.pos = 100, 56
 alien.topright = 0, 10
@@ -22,14 +23,14 @@ def update():
 def on_mouse_down(pos):
     if alien.collidepoint(pos):
         set_alien_hurt()
-        
+
 def set_alien_hurt():
     alien.image = 'alien_hurt'
     sounds.eep.play()
 
 
 def set_alien_normal():
-    alien.image = 'alien'        
+    alien.image = 'alien'
 
 def set_alien_hurt():
     alien.image = 'alien_hurt'
