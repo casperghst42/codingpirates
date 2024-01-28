@@ -2,9 +2,13 @@
 
 - Hjemmeside: [Pygame Zero](https://pygame-zero.readthedocs.io/en/stable/)
 
-- [Konvertere fra Scratch](https://pygame-zero.readthedocs.io/en/stable/from-scratch.html)
+- [Migrating from Scratch](https://pygame-zero.readthedocs.io/en/stable/from-scratch.html)
+
+- [Game Development with Pygame Zero](https://aposteriori.trinket.io/game-development-with-pygame-zero#/intro-to-pygame-zero/intro-and-installation)
 
 - [Kenny](https://www.kenney.nl/)
+
+- [Coding Games with Pygam Zero & Python](https://electronstudio.github.io/pygame-zero-book/)
 
 - Asserts (ting)
     
