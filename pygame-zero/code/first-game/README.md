@@ -1,6 +1,8 @@
 # My first game
 
-Simple version af (Pygame Zero Introduction)[https://pygame-zero.readthedocs.io/en/stable/introduction.html]
+Simple version af [Pygame Zero Introduction](https://pygame-zero.readthedocs.io/en/stable/introduction.html)
+
+Hele programmer er at finde i [intro.py](https://raw.githubusercontent.com/casperghst42/codingpirates/main/pygame-zero/code/first-game/intro.py)
 
 1. Start MU (mere [her](https://github.com/casperghst42/codingpirates/tree/main/mu-editor))
 2. Click [+] New for at lave en ny fil
