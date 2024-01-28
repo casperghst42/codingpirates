@@ -47,7 +47,8 @@ def draw():
 ```
 ![code-2](code-2.png)
 
-7. Test ....
+7. Test ....<br/>
+![alien-running](alien-running.png)
 
 8. Tilføj følgende:
 8.1 Efter "alien.pos...":
@@ -163,5 +164,5 @@ def set_alien_hurt():
 ```
 
 
-Koden med mere fyldige forklaring ligger her: https://pygame-zero.readthedocs.io/en/stable/introduction.html
+Koden med mere fyldige forklaring ligger her: [Pygame Zero Introduction](https://pygame-zero.readthedocs.io/en/stable/introduction.html)
 
