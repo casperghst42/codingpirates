@@ -29,7 +29,9 @@ HEIGHT = 300
 6.2. I dit codingpirates/first-game opret følgende directories:<br/>
 6.2.1. sounds<br/>
 6.2.2. images<br/>
-6.2. Fra "Platform Art Deleux" "Extra animations and enemies/Alien sprites/alienGreen.png" til dit images directory. Og kopiere eep.wav til dit sounds directory."
+6.2. Fra "Platform Art Deleux" kopire "Extra animations and enemies/Alien sprites/alienGreen.png" til dit images directory og omdøb den til alien.png.<br/>
+6.2. Fra "Platform Art Deleux" kopire "Extra animations and enemies/Alien sprites/alienGreen_hurt.png" til dit images directory og omdøb den til alien_hurt.png.<br/>
+6.3. Og kopiere eep.wav til dit sounds directory."<br/>
 
 6. Tilføj følgende:
 ```py
@@ -81,7 +83,22 @@ You missed me!
 ```
 )
 
-10. Ændre vores on_mouse_down(pos) til dette:
+10. Sikre dig at du har følgende filer (da )
+
+11. Ændre vores on_mouse_down(pos) til dette:
+```py
+def on_mouse_down(pos):
+    if alien.collidepoint(pos):
+        alien.image = 'alien_hurt'
+```
+
+Nu kan vi da se at vi rammer vores alien. 
+
+12. Tilføj følgende line i on_mouse_down(pos):
+```py
+sounds.eep.play()
+```
+Husk indryk (indent) og at det kun skal udføres hvis man rammen figuren.
 ```py
 def on_mouse_down(pos):
     if alien.collidepoint(pos):
@@ -89,5 +106,62 @@ def on_mouse_down(pos):
         alien.image = 'alien_hurt'
 ```
 
-Nu kan vi da se at vi rammer vores alien. 
+13. Tilføj følgende i toppen af din fil:
+```py
+import time
+```
+
+Ellers får du en fejl med den næste ændring.
+
+14. Ændre on_mouse_down(pos) til:
+```py
+def on_mouse_down(pos):
+    if alien.collidepoint(pos):
+        sounds.eep.play()
+        alien.image = 'alien_hurt'
+        time.sleep(1)
+        alien.image = 'alien'
+```
+
+Men der sker jo ikke noget .... 
+
+
+15. Ændre on_mounse_down(pos) til:
+```py
+def on_mouse_down(pos):
+    if alien.collidepoint(pos):
+        set_alien_hurt()
+```
+
+16. Tilføj følgende:
+```py
+
+def set_alien_hurt():
+    alien.image = 'alien_hurt'
+    sounds.eep.play()
+
+
+def set_alien_normal():
+    alien.image = 'alien'
+
+```
+
+Og du kan fjerne dette:
+```
+import time
+```
+
+Se det virker, men vores alien bliver jo ved med at se lidt sjov ud.
+
+17. Tilføj følgende:
+Dette sætter en "scheduler" op som efter et stykke tid kalder 'set_alien_normal()'
+```py
+def set_alien_hurt():
+    alien.image = 'alien_hurt'
+    sounds.eep.play()
+    clock.schedule_unique(set_alien_normal, 1.0)
+```
+
+
+Koden med mere fyldige forklaring ligger her: https://pygame-zero.readthedocs.io/en/stable/introduction.html
 
