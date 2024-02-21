@@ -17,8 +17,11 @@ def main():
     screen_rect = screen.get_rect()
     clock = pg.time.Clock()
 
+    # start med at vente 1 sek.
     timer = 1000
-	
+    # went 1 sek. mellem farveskifte
+    wait_time = 1000
+
     bg = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
 	
     while running:
@@ -29,12 +32,12 @@ def main():
         
         curr_ticks = pg.time.get_ticks()
         if curr_ticks > timer:
-            timer = curr_ticks + 1000            
+            timer = curr_ticks + wait_time # 1 sek.            
             bg = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
             pg.display.update()
             
         
-        clock.tick(1000)                  
+        clock.tick(wait_time)                  
         		
 
 if __name__ == '__main__':
